@@ -1,11 +1,11 @@
 #include <vector>
 #include <set>
 #include <iostream>
-#include "bentleyOttmann.hpp"
+#include "BentleyOttmann.hpp"
 
 using namespace std;
 
-double Segment::value = 0;
+double Segment::currentX = 0;
 bool Segment::after = false;
 
 int main(){
