@@ -36,6 +36,8 @@ public:
 
 private:
 
+    void adjust_segs_vector(vector<Segment>& segments);
+
     bool verify_events(const Segment& s1, const Segment& s2, const Event& e) const;
 
     void verify_intersection(const Segment& s1, const Segment& s2, const Event& e);

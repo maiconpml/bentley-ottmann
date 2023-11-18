@@ -4,6 +4,8 @@ BentleyOttmann::BentleyOttmann(){}
 
 BentleyOttmann::BentleyOttmann(vector<Segment> segments){
 
+    adjust_segs_vector(segments);
+
     for(auto& seg: segments){
         if(seg.getP1().x == seg.getP2().x){
 
@@ -130,6 +132,18 @@ void BentleyOttmann::display_events() const{
     for(int i=0; i<n; ++i){
         cout << auxQ.top();
         auxQ.pop();
+    }
+}
+
+void BentleyOttmann::adjust_segs_vector(vector<Segment>& segments){
+
+    auto it = segments.begin();
+
+    for(it; it!= segments.end(); ++it){
+
+        if((*it).getP2().x < (*it).getP1().x || ((*it).getP2().x == (*it).getP1().x && (*it).getP2().y < (*it).getP1().y)){
+            (*it).swap_points();
+        }
     }
 }
 
