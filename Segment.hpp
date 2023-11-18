@@ -21,6 +21,8 @@ public:
 
     Point getP2() const;
 
+    void swap_points();
+
     bool operator() (const Segment& lhs, const Segment& rhs) const;
 
     bool equals(const Segment& s) const;

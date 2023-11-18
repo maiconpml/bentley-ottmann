@@ -15,6 +15,12 @@ Point Segment::getP2() const{
     return p2;
 }
 
+void Segment::swap_points(){
+    Point aux = p1;
+    p1 = p2;
+    p2 = aux;
+}
+
 bool Segment::operator() (const Segment& lhs, const Segment& rhs) const{
 
     if((float)(lhs.p1.y + ((lhs.p2.y-lhs.p1.y)/(lhs.p2.x-lhs.p1.x)*(currentX-lhs.p1.x))) != (float)(rhs.p1.y + ((rhs.p2.y-rhs.p1.y)/(rhs.p2.x-rhs.p1.x)*(currentX-rhs.p1.x)))){
